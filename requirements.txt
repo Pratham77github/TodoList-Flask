@@ -1,0 +1,38 @@
+Step-1 : Creating Envirnment
+
+--> Installing Virtual Envirnment
+    pip install virtualenv
+
+--> Creating Virtual Envirnment
+    virtualenv env
+
+--> Activate env
+    .\env\Scripts\activate.ps1
+
+Step-2 : Copy minimal flask template
+
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route('/')
+    def hello_world():
+        return 'Hello, World!'
+
+--> Variable Rule
+    Passing the parameters with Flask Routing called variable rule
+
+example -   @app.route('/delete/<int:sno>')
+            def delete(sno):
+
+--> Methods
+1) GET -> Base Page
+2) POST -> Page Displayed after some action
+
+--> render_templates --> To render html pages (Note: Create folder named templates and store all html pages)
+
+--> <form action ="{{url_for('form')}}" method = "POST">   --> used to hit specific function
+
+--> SQLAlchemy
+    python
+    from app import db
+    db.create_all()
